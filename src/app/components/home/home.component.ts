@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // get artist data from child componenet and display on home page
   showArtist(data){
     this.result = data;
   }
