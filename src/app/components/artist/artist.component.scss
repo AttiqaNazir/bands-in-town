@@ -1,0 +1,18 @@
+
+
+.artistCard{
+
+    border: 1px solid #00000026; margin: 10px; padding: 10px; background-color: white;
+    img{
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        border: 1px solid #00000073;
+    }
+    label{
+        font-size: 16px; font-weight: 700;
+    }
+    p{
+        color: grey;
+    }
+}

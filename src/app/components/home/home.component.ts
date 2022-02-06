@@ -9,7 +9,12 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  result = null;
   ngOnInit(): void {
+  }
+
+  showArtist(data){
+    this.result = data;
   }
 
 }

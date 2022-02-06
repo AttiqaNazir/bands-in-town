@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor(private apiService: ApiService) { }
 
+
+  @Output() artist = new EventEmitter<any>();
+  search:any;
   ngOnInit(): void {
   }
+  searchArtist(args){
 
+    this.apiService.searchArtist(this.search ).subscribe(data=>{
+      this.artist.emit(data);
+    },res=>{
+  
+    })
+
+  }
 }

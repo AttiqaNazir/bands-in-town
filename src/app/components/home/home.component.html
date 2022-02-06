@@ -1,2 +1,7 @@
-<p>home works!</p>
-<app-search-bar></app-search-bar>
+<div class="container">
+    <app-search-bar (artist)="showArtist($event)"></app-search-bar>
+    <div class="row">
+        <app-artist [artist]="result"></app-artist>
+    </div>
+
+</div>
