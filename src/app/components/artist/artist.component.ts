@@ -14,6 +14,7 @@ export class ArtistComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // naviagte to event page
   getEvents(name){
     this.router.navigate(['events',name]);
   }

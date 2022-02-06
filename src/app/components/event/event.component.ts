@@ -17,6 +17,7 @@ export class EventComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //check for the searched artist name and get call api for the events
   ngAfterViewInit():void {
     this.route.params.subscribe(e=>{
       this.searched = e.name;
@@ -24,6 +25,7 @@ export class EventComponent implements OnInit {
     })
   }
 
+  // call api for events 
   loadEvents(name){
     this.apiService.getEvent(name).subscribe(e=>{
       this.events = e;

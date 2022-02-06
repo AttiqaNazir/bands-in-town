@@ -3,12 +3,14 @@
             <a [routerLink]="['',searched]" routerLinkActive="active" ><span> <i class="fas fa-angle-left"></i></span> <span> Back to result</span></a>
         </div>
 
-        <app-artist [artist]="artist"></app-artist>
+        <div class="row artist">
+            <app-artist [artist]="artist"></app-artist>
+        </div>
 
         <div class="mt-5 mb-4" style="font-weight: 600;"> {{(events && events.length>0)?(events.length+' Upcoming Events'):('No upcoming events')}} </div>
 
-        <div class="row">
-            <div *ngFor="let item of events" class="col-md-3 event-card">
+        <div class="" style="display: flex; flex-wrap: wrap;">
+            <div *ngFor="let item of events" class="col-md-3 row event-card">
                 <label>EVENT DETAILS</label>
                 <hr />
                 <div class="row">

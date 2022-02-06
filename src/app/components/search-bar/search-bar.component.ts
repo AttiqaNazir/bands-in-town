@@ -18,15 +18,28 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
   ngAfterViewInit():void {
+
     this.route.params.subscribe(e=>{
+      // find last search when get back from event page
       if(e.name){
         this.search = e.name;
         this.searchArtist(e.name);
+      }else{
+        // find the last searched result from the cache after refresh 
+        const lastSearch = sessionStorage.getItem('lastSearch');
+        if(lastSearch){
+          this.search = lastSearch;
+          this.searchArtist(lastSearch);
+        }
+
       }
     })
   }
-  searchArtist(args){
 
+  // Function is called when input value changes in the search bar
+  searchArtist(args){
+    sessionStorage.clear();
+    sessionStorage.setItem('lastSearch', this.search);
     this.apiService.searchArtist(this.search).subscribe(data=>{
       this.artist.emit(data);
     },res=>{
