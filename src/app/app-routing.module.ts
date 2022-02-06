@@ -10,7 +10,12 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'events',
+    path: ':name',
+    component: HomeComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'events/:name',
     component: EventComponent,
     pathMatch: 'full',
   },

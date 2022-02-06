@@ -11,8 +11,10 @@
     }
     label{
         font-size: 16px; font-weight: 700;
+        word-break: break-word;
     }
     p{
         color: grey;
+        word-break: break-word;
     }
 }

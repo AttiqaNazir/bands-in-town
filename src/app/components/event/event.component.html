@@ -1,21 +1,38 @@
 <div class="container">
         <div class="" style="padding: 0;">
-            <span> <i class="fas fa-angle-left"></i></span> <span> Back to result</span>
+            <a [routerLink]="['',searched]" routerLinkActive="active" ><span> <i class="fas fa-angle-left"></i></span> <span> Back to result</span></a>
         </div>
 
-        <div class="col-md-3" style="border: 1px solid black;">
-            <div class="col-md-6"> pic here</div>
-            <div class="col-md-6">
-                <label>
-                    Name here
-                </label>
-                <p> facebook link here</p>
+        <app-artist [artist]="artist"></app-artist>
+
+        <div class="mt-5 mb-4" style="font-weight: 600;"> {{(events && events.length>0)?(events.length+' Upcoming Events'):('No upcoming events')}} </div>
+
+        <div class="row">
+            <div *ngFor="let item of events" class="col-md-3 event-card">
+                <label>EVENT DETAILS</label>
+                <hr />
+                <div class="row">
+                    <div class="col-6">
+                        <p class="title">Country</p>
+                        <p>{{ item.venue.country}}</p>
+
+                        <p class="mt-2 title">Venue</p>
+                        <p>{{item.venue.name}}</p>
+                    </div>
+
+                    <div class="col-6">
+                        <p class="title">City</p>
+                        <p>{{item.venue.city}}</p>
+
+                        <p class="mt-2 title">Date</p>
+                        <p>{{item.datetime | date: 'mediumDate'}}</p>
+                    </div>
+
+
+                </div>
+
             </div>
-        </div>
 
-        <div class="mt-5 mb-4"> 8 Upcoming Events</div>
-
-        <div class="col-">
 
         </div>
 
