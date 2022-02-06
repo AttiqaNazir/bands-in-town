@@ -16,7 +16,7 @@ export class ApiService {
   }
 
   getEvent(name):Observable<any>{
-    return this.http.get<any>(`https://rest.bandsintown.com/artists/${name}/events?app_id=abc`);
+    return this.http.get<any>(`https://rest.bandsintown.com/artists/${name}/events?app_id=abc&date=2017-03-19'`);
     
   }
 }

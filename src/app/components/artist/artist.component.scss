@@ -18,3 +18,17 @@
         word-break: break-word;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    .artistCard {
+        .col-md-4{
+            text-align: center;
+        }
+        .col-md-8{
+            p,label{
+                text-align: center;
+            }
+            
+        }
+    }
+  }
