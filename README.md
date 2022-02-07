@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Install packages and run the project
+
+Install angular-cli globally `ng install -g @angular/cli`
+Install npm packages `npm install`
+Run `ng serve`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
